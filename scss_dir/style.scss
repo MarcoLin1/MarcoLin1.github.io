@@ -1,0 +1,721 @@
+/* reset css */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0px;
+  padding: 0px;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.btn,
+button,
+button:focus,
+input:focus,
+textarea:focus,
+select,
+select:focus,
+a:focus {
+  outline: 0px !important;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+button[disabled] {
+  pointer-events: none;
+}
+
+input {
+  padding: 0;
+}
+
+input:required {
+  box-shadow: none;
+}
+
+input:invalid {
+  box-shadow: none;
+}
+
+::-webkit-scrollbar {
+  /* make scrollbar transparent */
+  width: 0px;
+  background: transparent;
+}
+
+%slider-image-style {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 300px;
+  position: relative;
+  max-width: 1700px;
+  min-width: 400px;
+  margin: 0 auto;
+}
+
+%main-content-hover-style {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.header-nav {
+  background-color: rgb(51, 114, 156);
+  margin: 0 auto;
+  max-width: 1700px;
+}
+
+.nav-container {
+  width: 95%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .nav-title {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #ffffff;
+    line-height: 44px;
+    font-family: 'Vidaloka', serif;
+  }
+  .nav-toggle {
+    display: none;
+    position: absolute;
+    right: 50px;
+  }
+  .nav-toggle-label {
+    .hamburger {
+      width: 30px;
+      height: 3px;
+      background-color: #ffffff;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      &::before {
+        content: '';
+        width: 30px;
+        height: 3px;
+        background-color: #ffffff;
+        position: absolute;
+        top: 10px;
+      }
+      &::after {
+        content: '';
+        width: 30px;
+        height: 3px;
+        background-color: #ffffff;
+        position: absolute;
+        top: 20px;
+      }
+    }
+  }
+  .nav-toggle:checked ~ .nav-list {
+    display: block;
+  }
+  .nav-list {
+    display: none;
+    margin-bottom: 0.5rem;
+    .nav-item {
+      margin: 5px auto 5px auto;
+      color: #ffffff;
+      font-size: 1.1rem;
+      text-align: center;
+      font-family: 'Vidaloka', serif;
+    }
+    .nav-link {
+      text-decoration: none;
+      color: #ffffff;
+    }
+  }
+}
+
+.slider {
+  .slider-container {
+    position: relative;
+    .carousel-inner {
+      position: relative;
+      .carousel-item {
+        position: relative;
+        .slider-image-1 {
+          background-image: url(/public/image/sliderImage_v1.jpeg);
+          @extend %slider-image-style;
+        }
+        .slider-image-2 {
+          background-image: url(/public/image/sliderImage_v2.jpeg);
+          @extend %slider-image-style;
+        }
+        .slider-image-3 {
+          background-image: url(/public/image/sliderImage_v3.jpeg);
+          @extend %slider-image-style;
+        }
+        .slider-content-wrapper {
+        }
+        .slider-title {
+          width: 100%;
+          height: 2rem;
+          line-height: 2rem;
+          margin-bottom: 20px;
+          font-family: 'Vidaloka', serif;
+        }
+        .slider-text {
+          width: 100%;
+          height: 2rem;
+          line-height: 2rem;
+          font-size: 1.3rem;
+          font-family: 'Crimson Text', serif;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+
+.about {
+  margin: 0 auto 30px auto;
+  max-width: 1500px;
+}
+.about-container {
+  margin: 30px auto 0 auto;
+  width: 95%;
+
+  .about-title {
+    text-align: center;
+    font-size: 1.7rem;
+    color: #000000a8;
+    margin-bottom: 5px;
+    font-family: 'Vidaloka', serif;
+  }
+
+  .about-description {
+    text-align: center;
+    font-size: 1rem;
+    color: #000000a8;
+    line-height: 1.5rem;
+    font-family: 'Crimson Text', serif;
+  }
+}
+.skills {
+  max-width: 1500px;
+  margin: 0 auto 40px auto;
+}
+.skill-container {
+  margin-top: 20px;
+  .skill-wrapper {
+    .skill-text {
+      text-align: center;
+      font-size: 1.7rem;
+      color: #000000a8;
+      margin-bottom: 2rem;
+      font-family: 'Vidaloka', serif;
+    }
+    .skill-set {
+      width: 95%;
+      margin: 0 auto;
+      display: grid;
+      grid-gap: 1.5rem;
+      grid-template-columns: auto;
+      grid-template-rows: auto;
+      grid-template-areas: 
+      'vue javascript sass bootstrap'
+      'node mongodb express github'
+      '. heroku fork .';
+      img {
+        width: 100%;
+        max-width: 100px;
+        margin: auto;
+        padding: 10px;
+      }
+      .skill-item {
+        width: 100%;
+        max-width: 110px;
+        border-radius: 10px;
+        box-shadow: 1px 1px 15px 2px rgb(187, 189, 190);
+        margin: 0 auto;
+      }
+      .skill-vue {
+        grid-area: vue;
+      }
+      .skill-javascript {
+        grid-area: javascript;
+      }
+      .skill-sass {
+        grid-area: sass;
+      }
+      .skill-bootstrap {
+        grid-area: bootstrap;
+      }
+      .skill-node {
+        grid-area: node;
+      }
+      .skill-express {
+        grid-area: express;
+      }
+      .skill-mongodb {
+        grid-area: mongodb;
+      }
+      .skill-github {
+        grid-area: github;
+      }
+      .skill-heroku {
+        grid-area: heroku;
+      }
+      .skill-fork {
+        grid-area: fork;
+      }
+    }
+  }
+}
+
+.main-content {
+  margin-top: 40px;
+  margin: 0 auto;
+  .main-content-title {
+    font-family: 'Vidaloka', serif;
+    font-size: 1.7rem;
+    text-align: center;
+    color: #000000a8;
+  }
+}
+
+.main-content-container {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-gap: 2rem;
+  .main-content-wrapper {
+    width: 90%;
+    margin: 0 auto;
+    .main-content-item {
+      width: 100%;
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 5px;
+      box-shadow: 1px 1px 15px 2px rgb(187, 189, 190);
+      position: relative;
+      opacity: 1;
+      &:hover .main-content-img {
+        opacity: 0.5;
+      }
+      &:hover .main-content-image-text {
+        opacity: 1;
+      }
+      .main-content-img {
+        width: 100%;
+        border-radius: 5px;
+        opacity: 1;
+        transition: opacity 0.3s ease-out;
+      }
+      .main-content-image-text {
+        @extend %main-content-hover-style;
+        opacity: 0;
+        transition: opacity 0.3s ease-out;
+        .main-content-image-title {
+          margin-bottom: 10px;
+          text-align: center;
+          font-family: 'Crimson Text', serif;
+        }
+        .main-content-description {
+          text-align: left;
+          font-size: 1.1rem;
+          font-family: 'Crimson Text', serif;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+.footer-container {
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+  margin: 0 auto;
+  .footer-wrapper {
+    width: 100%;
+    background-color: rgb(51, 114, 156);
+    max-width: 1700px;
+    margin: 0 auto;
+    .footer-item {
+      width: 100%;
+    }
+    .footer-item-text {
+      text-align: center;
+      margin-top: 10px;
+      padding-bottom: 10px;
+      font-size: 0.7rem;
+      color: #ffffff;
+      font-family: 'Vidaloka', serif;
+    }
+    .footer-icons {
+      display: flex;
+      justify-content: space-around;
+      width: 85%;
+      margin: 0 auto;
+      padding-top: 10px;
+    }
+    .fa-linkedin, .fa-github-square, .fa-facebook-square, .fa-medium {
+      color: rgb(241, 163, 89);
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .main-content-container {
+    height: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 1.5rem;
+    .main-content-wrapper {
+      .main-content-item {
+        .main-content-image-text {
+          .main-content-description {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .main-content {
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (min-width: 756px) {
+  .slider {
+    .slider-container {
+      .carousel-inner {
+        .carousel-item {
+          .slider-image-1 {
+            height: 400px;
+          }
+          .slider-image-2 {
+            height: 400px;
+          }
+          .slider-image-3 {
+            height: 400px;
+          }
+        }
+      }
+    }
+  }
+  .nav-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: 'title title list list list';
+    .nav-title {
+      grid-area: title;
+    }
+    .nav-toggle-label {
+      grid-area: label;
+      .hamburger {
+        opacity: 0;
+      }
+    }
+    .nav-list {
+      grid-area: list;
+      display: flex;
+      margin-bottom: 0px;
+      .nav-item {
+        display: flex;
+        align-items: center;
+        font-size: 1.1rem;
+      }
+    }
+  }
+  .main-content-container {
+    .main-content-wrapper {
+      .main-content-item {
+        .main-content-image-text {
+          .main-content-description {
+            display: block;
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+
+  .skill-container {
+    margin: 80px auto 80px auto;
+    .skill-wrapper {
+      .skill-set {
+        grid-row-gap: 2.5rem;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas: 'vue javascript sass bootstrap node''mongodb express github heroku fork';
+      }
+    }
+  }
+  .footer-container {
+    .footer-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: 'copyright icons';
+    .footer-icons {
+      grid-area: icons;
+      margin: 10px auto 10px auto;
+      align-items: center;
+      justify-content: space-evenly;
+      padding-top: 0px;
+      width: 100%;
+    }
+    .footer-title {
+      grid-area: copyright;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .footer-item-text {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+}
+
+@media screen and (min-width: 900px) {
+  .slider {
+    .slider-container {
+      .carousel-inner {
+        .carousel-item {
+          .slider-image-1 {
+            height: 500px;
+          }
+          .slider-image-2 {
+            height: 500px;
+          }
+          .slider-image-3 {
+            height: 500px;
+          }
+        }
+      }
+    }
+  }
+  .nav-container {
+    .nav-list {
+      .nav-item {
+        font-size: 1.4rem;
+      }
+    }
+  }
+  .about-container {
+    margin-top: 60px;
+    .about-title {
+      font-size: 2.5rem;
+    }
+    .about-description {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      margin-top: 20px;
+    }
+  }
+  
+  .skill-container {
+    .skill-wrapper {
+      .skill-text {
+        font-size: 2.5rem;
+      }
+      .skill-set {
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 'vue javascript sass bootstrap node mongodb''. express github heroku fork .';
+      }
+    }
+  }
+
+  .main-content {
+    .main-content-title {
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+    }
+  }
+
+  .main-content-container {
+    display: initial;
+    .main-content-wrapper {
+      width: 100%;
+      .main-content-item {
+        display: flex;
+        width: 90%;
+        margin-bottom: 2rem;
+        padding: 10px;
+        .main-content-img {
+          width: 500px;
+          height: 300px;
+        }
+        .main-content-image-text {
+          position: initial;
+          opacity: 1;
+          transform: initial;
+          margin-left: 20px;
+          margin-top: 10px;
+          .main-content-image-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-top: 10px;
+          }
+          .main-content-description {
+            text-align: left;
+            font-size: 1.3rem;
+            margin-top: 20px;
+            font-weight: 600;
+            padding: 0 20px 0 20px;
+            line-height: 1.7rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  .slider {
+    .slider-container {
+      .carousel-inner {
+        .carousel-item {
+          .slider-image-1 {
+            height: 550px;
+          }
+          .slider-image-2 {
+            height: 550px;
+          }
+          .slider-image-3 {
+            height: 550px;
+          }
+        }
+      }
+    }
+  }
+  .skill-container {
+    .skill-wrapper {
+      .skill-set {
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 'vue javascript sass bootstrap node mongodb express''. . github heroku fork . .';
+      }
+    }
+  }
+
+  .main-content-container {
+    .main-content-wrapper {
+      .main-content-item {
+        .main-content-image-text {
+          .main-content-description {
+            font-size: 1.5rem;
+            line-height: 2rem;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+
+@media screen and (min-width: 1250px) {
+  .slider {
+    .slider-container {
+      .carousel-inner {
+        .carousel-item {
+          .slider-title {
+            font-size: 2.5rem;
+
+          }
+          .slider-text {
+            font-size: 1.5rem;
+          }
+          .slider-image-1 {
+            height: 650px;
+            background-position-y: 65%;
+          }
+          .slider-image-2 {
+            height: 650px;
+            background-position-y: 60%;
+          }
+          .slider-image-3 {
+            height: 650px;
+            background-position-y: 70%;
+          }
+        }
+      }
+    }
+  }
+  .skill-container {
+    margin: 150px auto 150px auto;
+    .skill-wrapper {
+      .skill-set {
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 'vue javascript sass bootstrap node mongodb express github heroku fork';
+      }
+    }
+  }
+  .main-content-container {
+    .main-content-wrapper {
+      .main-content-item {
+        .main-content-image-text {
+          width: 100%;
+          .main-content-image-title {
+           font-size: 2.5rem;
+          }
+          .main-content-description {
+           line-height: 2.5rem;
+          }
+        }
+        .main-content-img {
+          width: 700px;
+          height: 400px;
+       }
+      }
+    }
+  }
+}

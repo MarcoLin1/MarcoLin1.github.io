@@ -1,0 +1,535 @@
+/* reset css */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0px;
+  padding: 0px;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.btn,
+button,
+button:focus,
+input:focus,
+textarea:focus,
+select,
+select:focus,
+a:focus {
+  outline: 0px !important;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+button[disabled] {
+  pointer-events: none;
+}
+
+input {
+  padding: 0;
+}
+
+input:required {
+  box-shadow: none;
+}
+
+input:invalid {
+  box-shadow: none;
+}
+
+::-webkit-scrollbar {
+  /* make scrollbar transparent */
+  width: 0px;
+  background: transparent;
+}
+
+.slider .slider-container .carousel-inner .carousel-item .slider-image-3, .slider .slider-container .carousel-inner .carousel-item .slider-image-2, .slider .slider-container .carousel-inner .carousel-item .slider-image-1 {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 300px;
+  position: relative;
+  max-width: 1200px;
+  min-width: 400px;
+  margin: 0 auto;
+}
+
+.main-content-container .main-content-wrapper .main-content-item .main-content-image-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.header-nav {
+  background-color: #33729c;
+}
+
+.nav-container {
+  width: 95%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.nav-container .nav-title {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #ffffff;
+  line-height: 44px;
+}
+.nav-container .nav-toggle {
+  display: none;
+  position: absolute;
+  right: 50px;
+}
+.nav-container .nav-toggle-label .hamburger {
+  width: 30px;
+  height: 3px;
+  background-color: #ffffff;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.nav-container .nav-toggle-label .hamburger::before {
+  content: "";
+  width: 30px;
+  height: 3px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 10px;
+}
+.nav-container .nav-toggle-label .hamburger::after {
+  content: "";
+  width: 30px;
+  height: 3px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 20px;
+}
+.nav-container .nav-toggle:checked ~ .nav-list {
+  display: block;
+}
+.nav-container .nav-list {
+  display: none;
+  margin-bottom: 0.5rem;
+}
+.nav-container .nav-list .nav-item {
+  margin: 5px auto 5px auto;
+  color: #ffffff;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.slider .slider-container {
+  position: relative;
+}
+.slider .slider-container .carousel-inner {
+  position: relative;
+}
+.slider .slider-container .carousel-inner .carousel-item {
+  position: relative;
+}
+.slider .slider-container .carousel-inner .carousel-item .slider-image-1 {
+  background-image: url(/public/image/sliderImage_v1.jpeg);
+}
+.slider .slider-container .carousel-inner .carousel-item .slider-image-2 {
+  background-image: url(/public/image/sliderImage_v2.jpeg);
+}
+.slider .slider-container .carousel-inner .carousel-item .slider-image-3 {
+  background-image: url(/public/image/sliderImage_v3.jpeg);
+}
+.slider .slider-container .carousel-inner .carousel-item .slider-title {
+  width: 100%;
+  height: 2rem;
+  line-height: 2rem;
+  margin-bottom: 20px;
+}
+.slider .slider-container .carousel-inner .carousel-item .slider-text {
+  width: 100%;
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 1rem;
+}
+
+.about {
+  margin-bottom: 30px;
+}
+
+.about-container {
+  margin: 30px auto 0 auto;
+  width: 95%;
+}
+.about-container .about-title {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #000000a8;
+  margin-bottom: 5px;
+}
+.about-container .about-description {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #000000a8;
+  line-height: 1.5rem;
+}
+
+.skill-container {
+  margin-top: 20px;
+}
+.skill-container .skill-wrapper .skill-text {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #000000a8;
+  margin-bottom: 2rem;
+}
+.skill-container .skill-wrapper .skill-set {
+  width: 95%;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1.5rem;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas: "vue javascript sass bootstrap" "node mongodb express github" ". heroku fork .";
+}
+.skill-container .skill-wrapper .skill-set img {
+  width: 100%;
+  max-width: 100px;
+  margin: auto;
+  padding: 10px;
+}
+.skill-container .skill-wrapper .skill-set .skill-item {
+  width: 100%;
+  max-width: 110px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 15px 2px #bbbdbe;
+  margin: 0 auto;
+}
+.skill-container .skill-wrapper .skill-set .skill-vue {
+  grid-area: vue;
+}
+.skill-container .skill-wrapper .skill-set .skill-javascript {
+  grid-area: javascript;
+}
+.skill-container .skill-wrapper .skill-set .skill-sass {
+  grid-area: sass;
+}
+.skill-container .skill-wrapper .skill-set .skill-bootstrap {
+  grid-area: bootstrap;
+}
+.skill-container .skill-wrapper .skill-set .skill-node {
+  grid-area: node;
+}
+.skill-container .skill-wrapper .skill-set .skill-express {
+  grid-area: express;
+}
+.skill-container .skill-wrapper .skill-set .skill-mongodb {
+  grid-area: mongodb;
+}
+.skill-container .skill-wrapper .skill-set .skill-github {
+  grid-area: github;
+}
+.skill-container .skill-wrapper .skill-set .skill-heroku {
+  grid-area: heroku;
+}
+.skill-container .skill-wrapper .skill-set .skill-fork {
+  grid-area: fork;
+}
+
+.main-content {
+  margin-top: 40px;
+}
+.main-content .main-content-title {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #000000a8;
+}
+
+.main-content-container {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-gap: 2rem;
+}
+.main-content-container .main-content-wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+.main-content-container .main-content-wrapper .main-content-item {
+  width: 100%;
+  margin: 0 auto;
+  padding: 5px;
+  box-shadow: 1px 1px 15px 2px #bbbdbe;
+  position: relative;
+  opacity: 1;
+}
+.main-content-container .main-content-wrapper .main-content-item:hover .main-content-img {
+  opacity: 0.5;
+}
+.main-content-container .main-content-wrapper .main-content-item:hover .main-content-image-text {
+  opacity: 1;
+}
+.main-content-container .main-content-wrapper .main-content-item .main-content-img {
+  width: 100%;
+  border-radius: 5px;
+  opacity: 1;
+  transition: opacity 0.3s ease-out;
+}
+.main-content-container .main-content-wrapper .main-content-item .main-content-image-text {
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+.main-content-container .main-content-wrapper .main-content-item .main-content-image-text .main-content-image-title {
+  margin-bottom: 10px;
+  text-align: center;
+}
+.main-content-container .main-content-wrapper .main-content-item .main-content-image-text .main-content-description {
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.footer-container {
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+}
+.footer-container .footer-wrapper {
+  width: 100%;
+  background-color: #33729c;
+}
+.footer-container .footer-wrapper .footer-item {
+  width: 100%;
+}
+.footer-container .footer-wrapper .footer-item-text {
+  text-align: center;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  font-size: 0.7rem;
+  color: #ffffff;
+}
+.footer-container .footer-wrapper .footer-icons {
+  display: flex;
+  justify-content: space-around;
+  width: 85%;
+  margin: 0 auto;
+  color: #f1a359;
+  padding-top: 10px;
+}
+
+@media screen and (min-width: 600px) {
+  .main-content-container {
+    height: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 1.5rem;
+  }
+
+  .main-content {
+    margin-bottom: 40px;
+  }
+}
+@media screen and (min-width: 756px) {
+  .slider .slider-container .carousel-inner .carousel-item .slider-image-1 {
+    height: 400px;
+  }
+  .slider .slider-container .carousel-inner .carousel-item .slider-image-2 {
+    height: 400px;
+  }
+  .slider .slider-container .carousel-inner .carousel-item .slider-image-3 {
+    height: 400px;
+  }
+
+  .nav-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: "title title list list list";
+  }
+  .nav-container .nav-title {
+    grid-area: title;
+  }
+  .nav-container .nav-toggle-label {
+    grid-area: label;
+  }
+  .nav-container .nav-toggle-label .hamburger {
+    opacity: 0;
+  }
+  .nav-container .nav-list {
+    grid-area: list;
+    display: flex;
+    margin-bottom: 0px;
+  }
+  .nav-container .nav-list .nav-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+  }
+
+  .skill-container {
+    margin: 80px auto 80px auto;
+  }
+  .skill-container .skill-wrapper .skill-set {
+    grid-row-gap: 2.5rem;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "vue javascript sass bootstrap node" "mongodb express github heroku fork";
+  }
+
+  .footer-container .footer-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "copyright icons";
+  }
+  .footer-container .footer-wrapper .footer-icons {
+    grid-area: icons;
+    margin: 10px auto 10px auto;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 0px;
+    width: 100%;
+  }
+  .footer-container .footer-wrapper .footer-title {
+    grid-area: copyright;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer-container .footer-wrapper .footer-title .footer-item-text {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 900px) {
+  .slider .slider-container .carousel-inner .carousel-item .slider-image-1 {
+    height: 500px;
+  }
+  .slider .slider-container .carousel-inner .carousel-item .slider-image-2 {
+    height: 500px;
+  }
+  .slider .slider-container .carousel-inner .carousel-item .slider-image-3 {
+    height: 500px;
+  }
+
+  .nav-container .nav-list .nav-item {
+    font-size: 1.1rem;
+  }
+
+  .about-container {
+    margin-top: 60px;
+  }
+  .about-container .about-title {
+    font-size: 1.7rem;
+  }
+  .about-container .about-description {
+    font-size: 1rem;
+    margin-top: 20px;
+  }
+
+  .skill-container .skill-wrapper .skill-text {
+    font-size: 1.7rem;
+  }
+  .skill-container .skill-wrapper .skill-set {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: "vue javascript sass bootstrap node mongodb" ". express github heroku fork .";
+  }
+
+  .main-content .main-content-title {
+    margin-bottom: 30px;
+    font-size: 1.7rem;
+  }
+
+  .main-content-container {
+    display: initial;
+  }
+  .main-content-container .main-content-wrapper {
+    width: 100%;
+  }
+  .main-content-container .main-content-wrapper .main-content-item {
+    display: flex;
+    width: 90%;
+    margin-bottom: 2rem;
+    padding: 10px;
+  }
+  .main-content-container .main-content-wrapper .main-content-item .main-content-img {
+    width: 500px;
+    height: 300px;
+  }
+  .main-content-container .main-content-wrapper .main-content-item .main-content-image-text {
+    position: initial;
+    opacity: 1;
+    transform: initial;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+  .main-content-container .main-content-wrapper .main-content-item .main-content-image-text .main-content-description {
+    text-align: left;
+    font-size: 1rem;
+    margin-top: 20px;
+  }
+}
+@media screen and (min-width: 1050px) {
+  .skill-container .skill-wrapper .skill-set {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: "vue javascript sass bootstrap node mongodb express" ". . github heroku fork . .";
+  }
+}
+@media screen and (min-width: 1250px) {
+  .skill-container {
+    margin: 200px auto 200px auto;
+  }
+  .skill-container .skill-wrapper .skill-set {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: "vue javascript sass bootstrap node mongodb express github heroku fork";
+  }
+
+  .main-content-container .main-content-wrapper .main-content-item {
+    max-width: 1200px;
+  }
+  .main-content-container .main-content-wrapper .main-content-item .main-content-img {
+    width: 600px;
+    height: 400px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
